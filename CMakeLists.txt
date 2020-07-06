@@ -67,6 +67,11 @@ add_library(${PROJECT_NAME} ${SRC_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${PROTOBUF_LIBRARIES} ${catkin_LIBRARIES})
 
+# add_subdirectory(examples)
+add_executable(main src/main.cc)
+target_include_directories(main PUBLIC include/)
+target_link_libraries(main PUBLIC ${PROJECT_NAME})
+
 #############
 ## Install ##
 #############

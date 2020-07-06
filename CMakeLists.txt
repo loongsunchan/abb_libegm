@@ -103,6 +103,11 @@ if(NOT BUILD_SHARED_LIBS)
   target_compile_definitions(${PROJECT_NAME} PUBLIC "ABB_LIBEGM_STATIC_DEFINE")
 endif()
 
+# add_subdirectory(examples)
+add_executable(main src/main.cc)
+target_include_directories(main PUBLIC include/)
+target_link_libraries(main PUBLIC ${PROJECT_NAME})
+
 #############
 ## Install ##
 #############
